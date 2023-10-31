@@ -23,6 +23,10 @@ export class ListaContatosComponent implements OnInit {
   }
 
   excluirContato(id: number) {
+    let confirmacao = confirm('Deseja excluir este contato?');
+    if (!confirmacao) {
+      return;
+    }
     this.contatoService.excluirContato(id).subscribe(() => {
       this.atualizarLista();
     });
