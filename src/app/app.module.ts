@@ -8,6 +8,7 @@ import { ListaContatosComponent } from './lista-contatos/lista-contatos.componen
 import { AdicionarContatoComponent } from './adicionar-contato/adicionar-contato.component';
 import { EditarContatoComponent } from './editar-contato/editar-contato.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
