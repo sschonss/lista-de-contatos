@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ListaContatosComponent } from './lista-contatos/lista-contatos.component';
 import { AdicionarContatoComponent } from './adicionar-contato/adicionar-contato.component';
 import { EditarContatoComponent } from './editar-contato/editar-contato.component';
+import { ButtonActionComponent } from './button-action/button-action.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { EditarContatoComponent } from './editar-contato/editar-contato.componen
     ListaContatosComponent,
     AdicionarContatoComponent,
     EditarContatoComponent,
+    ButtonActionComponent,
   ],
   imports: [
     BrowserModule,

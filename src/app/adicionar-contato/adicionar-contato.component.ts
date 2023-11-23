@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ContatoService } from '../contato.service';
 import { Router } from '@angular/router';
 
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './adicionar-contato.component.html',
   styleUrls: ['./adicionar-contato.component.css'],
 })
-export class AdicionarContatoComponent implements OnInit {
+export class AdicionarContatoComponent {
   contato = {
     nome: '',
     email: '',
@@ -16,67 +16,60 @@ export class AdicionarContatoComponent implements OnInit {
 
   constructor(private contatoService: ContatoService, private router: Router) {}
 
-  ngOnInit(): void {}
-
-  adicionarContato() {
-
-    if (!this.verificaNome(this.contato.nome)) {
-      alert('Nome inválido');
+  adicionarContato(): void {
+    if (!this.validarContato()) {
+      alert('Dados inválidos!');
       return;
     }
 
-    if (!this.verificaEmail(this.contato.email)) {
-      alert('Email inválido');
-      return;
-    }
-
-    if (!this.verificaTelefone(this.contato.telefone)) {
-      alert('Telefone inválido');
-      return;
-    }
-
-    this.contato.nome = this.formatarNome(this.contato.nome);
-    this.contato.telefone = this.formatarTelefone(this.contato.telefone);
+    this.formatarContato();
 
     this.contatoService.criarContato(this.contato).subscribe(() => {
       this.router.navigate(['/']);
     });
   }
 
-  verificaEmail(email: string) {
-    if (email.indexOf('@') > -1 && email.indexOf('.') > -1) {
-      return true;
-    }
-    return false;
+  private validarContato(): boolean {
+    return (
+      this.verificaNome(this.contato.nome) &&
+      this.verificaEmail(this.contato.email) &&
+      this.verificaTelefone(this.contato.telefone)
+    );
   }
 
-  verificaTelefone(telefone: string) {
-    if (telefone.length < 8) {
-      return false;
-    }
-    return true;
+  private verificaEmail(email: string): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   }
 
-  verificaNome(nome: string) {
-    if (nome.length < 3) {
-      return false;
-    }
-    return true;
+  private verificaTelefone(telefone: string): boolean {
+    const telefoneRegex = /^\d{8}|\d{9}$/;
+    return telefoneRegex.test(telefone);
   }
 
-  formatarTelefone(telefone: string) {
+  private verificaNome(nome: string): boolean {
+    return nome.trim().length >= 3;
+  }
+
+  private formatarTelefone(telefone: string): string {
+    const regex8Digitos = /^(\d{4})(\d{4})$/;
+    const regex9Digitos = /^(\d{5})(\d{4})$/;
+
     if (telefone.length === 8) {
-      return telefone.replace(/(\d{4})(\d{4})/, '$1-$2');
+      return telefone.replace(regex8Digitos, '$1-$2');
     } else if (telefone.length === 9) {
-      return telefone.replace(/(\d{5})(\d{4})/, '$1-$2');
+      return telefone.replace(regex9Digitos, '$1-$2');
     } else {
       return telefone;
     }
   }
 
-  formatarNome(nome: string) {
-    nome = nome.toLowerCase();
-    return nome.charAt(0).toUpperCase() + nome.slice(1);
+  private formatarNome(nome: string): string {
+    return nome.charAt(0).toUpperCase() + nome.slice(1).toLowerCase();
   }
 
+  private formatarContato(): void {
+    this.contato.nome = this.formatarNome(this.contato.nome);
+    this.contato.telefone = this.formatarTelefone(this.contato.telefone);
+  }
 }
