@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // Importe FormsModule
 import { HttpClientModule } from '@angular/common/http'; // Importe HttpClientModule
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +11,7 @@ import { ButtonActionComponent } from './button-action/button-action.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BackButtonComponent } from './back-button/back-button.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 @NgModule({
@@ -28,7 +29,12 @@ import { BackButtonComponent } from './back-button/back-button.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule, // Adicione FormsModule aqui
-    HttpClientModule, // Adicione HttpClientModule aqui
+    HttpClientModule, ServiceWorkerModule.register('ngsw-worker.js', {
+  enabled: !isDevMode(),
+  // Register the ServiceWorker as soon as the application is stable
+  // or after 30 seconds (whichever comes first).
+  registrationStrategy: 'registerWhenStable:30000'
+}), // Adicione HttpClientModule aqui
   ],
   providers: [],
   bootstrap: [AppComponent],
