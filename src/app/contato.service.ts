@@ -29,4 +29,8 @@ export class ContatoService {
   getContato(id: number): Observable<any> {
     return this.http.get(`${this.apiUrl}/${id}`);
   }
+
+  goHome(): Observable<any> {
+    return this.http.get(this.apiUrl);
+  }
 }

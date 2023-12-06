@@ -23,10 +23,7 @@ export class AdicionarContatoComponent {
     }
 
     this.formatarContato();
-
-    this.contatoService.criarContato(this.contato).subscribe(() => {
-      this.router.navigate(['/']);
-    });
+    this.salvarContato();
   }
 
   private validarContato(): boolean {
@@ -71,5 +68,11 @@ export class AdicionarContatoComponent {
   private formatarContato(): void {
     this.contato.nome = this.formatarNome(this.contato.nome);
     this.contato.telefone = this.formatarTelefone(this.contato.telefone);
+  }
+
+  private salvarContato(): void {
+    this.contatoService.criarContato(this.contato).subscribe(() => {
+      this.router.navigate(['/']);
+    });
   }
 }

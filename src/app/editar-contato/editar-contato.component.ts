@@ -30,57 +30,61 @@ export class EditarContatoComponent implements OnInit {
 
   ngOnInit(): void {
     const idParam = this.route.snapshot.paramMap.get('id');
-    const id = idParam ? +idParam : null;
+    const id = idParam !== null ? +idParam : null;
 
     if (id !== null && !isNaN(id)) {
-      this.contatoService.getContato(id).subscribe((data: Contato) => {
-        if (data) {
-          data.telefone = this.formatarTelefone(data.telefone);
-          data.nome = this.formatarNome(data.nome);
-          this.contato = data;
-        } else {
-          this.router.navigate(['/']);
-        }
-      });
+      this.carregarContato(id);
     } else {
-      this.router.navigate(['/']);
+      this.redirecionarParaPaginaInicial();
     }
   }
 
+  carregarContato(id: number): void {
+    this.contatoService.getContato(id).subscribe((data: Contato) => {
+      if (data) {
+        this.contato = {
+          ...data,
+          telefone: this.formatarTelefone(data.telefone),
+          nome: this.formatarNome(data.nome),
+        };
+      } else {
+        this.redirecionarParaPaginaInicial();
+      }
+    });
+  }
+
   atualizarContato(): void {
-    if (this.validarContato(this.contato)) {
+    if (this.ehContatoValido(this.contato)) {
       this.contatoService
         .atualizarContato(this.contato.id, this.contato)
-        .subscribe(() => {
-          this.router.navigate(['/']);
-        });
+        .subscribe(() => this.redirecionarParaPaginaInicial());
     } else {
       alert('Dados inválidos!');
     }
   }
 
-  private validarContato(contato: Contato): boolean {
+  ehContatoValido(contato: Contato): boolean {
     return (
-      this.verificaNome(contato.nome) &&
-      this.verificaEmail(contato.email) &&
-      this.verificaTelefone(contato.telefone)
+      this.validarNome(contato.nome) &&
+      this.validarEmail(contato.email) &&
+      this.validarTelefone(contato.telefone)
     );
   }
 
-  private verificaEmail(email: string): boolean {
+  validarEmail(email: string): boolean {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   }
 
-  private verificaTelefone(telefone: string): boolean {
+  validarTelefone(telefone: string): boolean {
     return telefone.length >= 8;
   }
 
-  private verificaNome(nome: string): boolean {
+  validarNome(nome: string): boolean {
     return nome.trim().length >= 3;
   }
 
-  private formatarTelefone(telefone: string): string {
+  formatarTelefone(telefone: string): string {
     const regex8Digitos = /^(\d{4})(\d{4})$/;
     const regex9Digitos = /^(\d{5})(\d{4})$/;
 
@@ -93,7 +97,11 @@ export class EditarContatoComponent implements OnInit {
     }
   }
 
-  private formatarNome(nome: string): string {
+  formatarNome(nome: string): string {
     return nome.charAt(0).toUpperCase() + nome.slice(1).toLowerCase();
+  }
+
+  redirecionarParaPaginaInicial(): void {
+    this.router.navigate(['/']);
   }
 }

@@ -1,31 +1,33 @@
-<div class="flex flex-col items-center justify-center">
-    <h2 class="text-xl font-bold">Lista de Contatos</h2>
-    <app-button-action texto="Adicionar Contato" [link]="['/adicionar']"></app-button-action>
+<div class="flex flex-col ml-4 mr-4">
+    <div>
+        <app-button-action texto="Adicionar Contato" [link]="['/adicionar']"></app-button-action>
+    </div>
 
-    <div *ngFor="let contato of contatos" class="bg-gray-800 m-4 p-4 flex flex-row rounded-lg">
-        <div class="flex flex-row mt-2 ml-2">
-            <div class="flex flex-col items-center">
-                <div class="text-xl font-bold bg-white rounded-full w-12 h-12 flex items-center justify-center">
-                    {{ contato.nome[0] }}
-                </div>
+    <ng-container *ngIf="contatos.length > 0; else noContacts">
+    <div *ngFor="let contato of contatos" class="bg-gray-800 my-4 p-4 rounded-lg w-full">
+        <div class="flex flex-row items-center">
+            <div
+                class="flex items-center justify-center rounded-full w-12 h-12 bg-indigo-500 text-white text-xl font-bold">
+                {{ contato.nome[0] }}
             </div>
-            <div class="flex flex-col ml-4 items-start justify-center mb-4">
+
+            <div class="ml-4">
                 <div class="text-md font-bold text-white">
                     {{ contato.nome }}
                 </div>
-                <div class="text-xs font-bold text-white">
+                <div class="text-xs text-gray-400">
                     {{ contato.telefone }}
                 </div>
             </div>
 
-            <div class="flex flex-col ml-8 mr-4 items-center justify-center mb-4">
+            <div class="flex-grow"></div>
+
+            <div class="flex items-center justify-end space-x-4">
                 <div class="text-xs font-bold text-white">
                     <a [routerLink]="['/editar', contato.id]">
                         Editar
                     </a>
                 </div>
-
-                <!--botao remove contato-->
                 <div class="text-xs font-bold text-white">
                     <a (click)="excluirContato(contato.id)" class="cursor-pointer">
                         Remover
@@ -34,4 +36,10 @@
             </div>
         </div>
     </div>
+    </ng-container>
+    <ng-template #noContacts>
+        <div class="bg-gray-800 my-4 p-4 rounded-lg w-full text-white text-center">
+            Não existem contatos para exibir.
+        </div>
+    </ng-template>
 </div>
