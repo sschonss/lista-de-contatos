@@ -8,6 +8,9 @@ import { ListaContatosComponent } from './lista-contatos/lista-contatos.componen
 import { AdicionarContatoComponent } from './adicionar-contato/adicionar-contato.component';
 import { EditarContatoComponent } from './editar-contato/editar-contato.component';
 import { ButtonActionComponent } from './button-action/button-action.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { BackButtonComponent } from './back-button/back-button.component';
 
 
 @NgModule({
@@ -17,6 +20,9 @@ import { ButtonActionComponent } from './button-action/button-action.component';
     AdicionarContatoComponent,
     EditarContatoComponent,
     ButtonActionComponent,
+    HeaderComponent,
+    FooterComponent,
+    BackButtonComponent,
   ],
   imports: [
     BrowserModule,
