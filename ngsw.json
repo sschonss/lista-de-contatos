@@ -1,0 +1,89 @@
+{
+  "configVersion": 1,
+  "timestamp": 1701824905246,
+  "index": "./lista-de-contatos/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "./lista-de-contatos/favicon.ico",
+        "./lista-de-contatos/index.html",
+        "./lista-de-contatos/main.0ed8440a7bc27e2d.js",
+        "./lista-de-contatos/manifest.webmanifest",
+        "./lista-de-contatos/polyfills.eaec1e914c944af5.js",
+        "./lista-de-contatos/runtime.8ec9b328632fee48.js",
+        "./lista-de-contatos/styles.b21388cda7e505b7.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "./lista-de-contatos/assets/icons/icon-128x128.png",
+        "./lista-de-contatos/assets/icons/icon-144x144.png",
+        "./lista-de-contatos/assets/icons/icon-152x152.png",
+        "./lista-de-contatos/assets/icons/icon-192x192.png",
+        "./lista-de-contatos/assets/icons/icon-384x384.png",
+        "./lista-de-contatos/assets/icons/icon-512x512.png",
+        "./lista-de-contatos/assets/icons/icon-72x72.png",
+        "./lista-de-contatos/assets/icons/icon-96x96.png",
+        "./lista-de-contatos/fontawesome-webfont.8a7cb27d142e3e19.ttf",
+        "./lista-de-contatos/fontawesome-webfont.cf011583fb81df9f.woff",
+        "./lista-de-contatos/fontawesome-webfont.da909aa098b0ee2d.svg",
+        "./lista-de-contatos/fontawesome-webfont.e9955780856cf8aa.woff2"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "./lista-de-contatos/assets/icons/icon-128x128.png": "b1f06c7d714abb4a0cc4d1f7c954feb26826e4c4",
+    "./lista-de-contatos/assets/icons/icon-144x144.png": "96a0d629765c1bc85d9263c6bc83094ca776d267",
+    "./lista-de-contatos/assets/icons/icon-152x152.png": "b1fbbee3902eb96a7658e3bb006f31f78ca5a44c",
+    "./lista-de-contatos/assets/icons/icon-192x192.png": "e4211163bf0911688fbfb80278d8ff4d2f77691d",
+    "./lista-de-contatos/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "./lista-de-contatos/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "./lista-de-contatos/assets/icons/icon-72x72.png": "279825a1ac4377032ae996a1832c641e33ccf1b6",
+    "./lista-de-contatos/assets/icons/icon-96x96.png": "592885efcbfee27e5e20be4fa3043589390d2740",
+    "./lista-de-contatos/favicon.ico": "367757d1302cee574e48f002f246063e1e7179d0",
+    "./lista-de-contatos/fontawesome-webfont.8a7cb27d142e3e19.ttf": "13b1eab65a983c7a73bc7997c479d66943f7c6cb",
+    "./lista-de-contatos/fontawesome-webfont.cf011583fb81df9f.woff": "28b782240b3e76db824e12c02754a9731a167527",
+    "./lista-de-contatos/fontawesome-webfont.da909aa098b0ee2d.svg": "98a8aa5cf7d62c2eff5f07ede8d844b874ef06ed",
+    "./lista-de-contatos/fontawesome-webfont.e9955780856cf8aa.woff2": "d6f48cba7d076fb6f2fd6ba993a75b9dc1ecbf0c",
+    "./lista-de-contatos/index.html": "18511a16296294d3277131cd1f1166c1d9bd7fe3",
+    "./lista-de-contatos/main.0ed8440a7bc27e2d.js": "49b1224491edd618b3e7ecf0aaece0bcf923061a",
+    "./lista-de-contatos/manifest.webmanifest": "2066ea17fd9bad99b95a8b419007f775ec710cbd",
+    "./lista-de-contatos/polyfills.eaec1e914c944af5.js": "709f34f2ed5de273a759f801963dd53d1c5cea6c",
+    "./lista-de-contatos/runtime.8ec9b328632fee48.js": "9e4f15888892c07e9e8a223ec40e9ed232ad3e1f",
+    "./lista-de-contatos/styles.b21388cda7e505b7.css": "80fb51cadcae9c885a84ff370b7ad0456a6897c5"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
