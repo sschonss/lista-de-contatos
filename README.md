@@ -7,7 +7,6 @@ O frontend da aplicação foi desenvolvido com Angular e o backend foi simulado 
 ## Endereço de Deploy - GitHub Pages
 https://sschonss.github.io/lista-de-contatos/
 
-
 ## Protótipo
 
 https://app.quant-ux.com/#/test.html?h=a2aa10av6Nngkll6pDamAP73nbvQet9YbCqWt0lVRNqsuyK6LELyTZ3eHSdm&ln=en
