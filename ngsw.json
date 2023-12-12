@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1701824905246,
+  "timestamp": 1702339334081,
   "index": "./lista-de-contatos/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "./lista-de-contatos/favicon.ico",
         "./lista-de-contatos/index.html",
-        "./lista-de-contatos/main.0ed8440a7bc27e2d.js",
+        "./lista-de-contatos/main.7f6228c640706a41.js",
         "./lista-de-contatos/manifest.webmanifest",
         "./lista-de-contatos/polyfills.eaec1e914c944af5.js",
         "./lista-de-contatos/runtime.8ec9b328632fee48.js",
@@ -60,8 +60,8 @@
     "./lista-de-contatos/fontawesome-webfont.cf011583fb81df9f.woff": "28b782240b3e76db824e12c02754a9731a167527",
     "./lista-de-contatos/fontawesome-webfont.da909aa098b0ee2d.svg": "98a8aa5cf7d62c2eff5f07ede8d844b874ef06ed",
     "./lista-de-contatos/fontawesome-webfont.e9955780856cf8aa.woff2": "d6f48cba7d076fb6f2fd6ba993a75b9dc1ecbf0c",
-    "./lista-de-contatos/index.html": "18511a16296294d3277131cd1f1166c1d9bd7fe3",
-    "./lista-de-contatos/main.0ed8440a7bc27e2d.js": "49b1224491edd618b3e7ecf0aaece0bcf923061a",
+    "./lista-de-contatos/index.html": "81a2744e9f7033f00e604d39f7baf206987268fe",
+    "./lista-de-contatos/main.7f6228c640706a41.js": "888affd885dcc32476e8fbdc9ff0237e471f3590",
     "./lista-de-contatos/manifest.webmanifest": "2066ea17fd9bad99b95a8b419007f775ec710cbd",
     "./lista-de-contatos/polyfills.eaec1e914c944af5.js": "709f34f2ed5de273a759f801963dd53d1c5cea6c",
     "./lista-de-contatos/runtime.8ec9b328632fee48.js": "9e4f15888892c07e9e8a223ec40e9ed232ad3e1f",
