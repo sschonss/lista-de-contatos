@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ContatoService {
-  private apiUrl = 'http://localhost:3000/contatos'; // Certifique-se de que o URL esteja correto
+  private apiUrl = 'http://168.197.66.120:3000/contatos'; // Certifique-se de que o URL esteja correto
 
   constructor(private http: HttpClient) {}
 
